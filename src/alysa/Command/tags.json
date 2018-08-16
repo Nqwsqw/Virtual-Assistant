@@ -1,0 +1,15 @@
+{
+	"printHello" :
+	{
+		"OS" : "*",
+		"prefix" : ["print", "hello"],
+		"languages" : ["en", "fr"]
+	},
+
+	"saySomething" :
+	{
+		"OS" : ["Windows", "Mac OS"],
+		"prefix" : ["say"],
+		"languages" : "*"
+	}
+}
