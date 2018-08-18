@@ -28,13 +28,12 @@ class Alysa:
 		return tag
 
 	def keepUsefulWords(self, useless_list, string):
-		useless_list = ["Cat", "Birds"]
-		string = input("Input str :")
 		for words in useless_list:
 			if words in string and words in useless_list:
 				string = string.replace(words, "")
 				string = string.strip()
-			
+		return string
+	
 	def reply(self):
 		pass
 
