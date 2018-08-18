@@ -1,0 +1,8 @@
+{
+	"en" : { "preposition" : ["to", "of", "at", "by", "for"],
+		"question" : ["what", "when", "who", "how", "why"]
+	},
+	"fr" : { "preposition" : ["à", "de", "en", "par", "vers", "pour"],
+		"question" : ["quoi", "quand", "qui", "comment", "pourquoi", "quel", "lequel", "qu'est-ce", "que", "qu'est", "ce", "est-ce"]
+	}
+}
