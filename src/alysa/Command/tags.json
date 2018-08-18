@@ -12,4 +12,10 @@
 		"prefix" : ["say"],
 		"languages" : "*"
 	}
+	"playMusic" :
+	{
+		"OS" : "*",
+		"prefix" : ["play"],
+		"languages" : "*"
+	}
 }
