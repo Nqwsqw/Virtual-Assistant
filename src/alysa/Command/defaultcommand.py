@@ -1,5 +1,5 @@
-from pathlib import path
 import os
+from playsound import playsound
 
 def printHello(request):
 	print("Hello World")
@@ -17,6 +17,6 @@ def playMusic(request):
 	path = "Virutal-Assistant/res/Musics/" + string + "." + extension
 	music = open(path, "r")
 	if(os.path.isfile(path) == True):
-		os.startfile(path)
+		playsound(path)
 	else:
 		print("No Such Music")
