@@ -37,8 +37,3 @@ class Alysa:
 	def reply(self):
 		pass
 
-def main():
-	alysa = Alysa()
-
-if __name__ == '__main__':
-	main()
