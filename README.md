@@ -3,7 +3,7 @@
 ## Prequesties
  - python3
  - playsound python3
- - pyojbc
+ - pyobjc
 
 ## Add your own command
 Go to src/alysa/Command/defaultcommand.py
