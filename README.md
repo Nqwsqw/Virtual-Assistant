@@ -36,5 +36,5 @@ list_command = [
 or
 
 ```
-python3 src/alysa/App/main.py
+run.bat
 ```
