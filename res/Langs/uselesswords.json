@@ -4,7 +4,7 @@
 		"verb" : ["can"]
 	},
 	"fr" : { "preposition" : ["à", "de", "en", "par", "vers", "pour"],
-		"question" : ["quoi", "quand", "qui", "comment", "pourquoi", "quel", "lequel", "qu'est-ce", "que", "qu'est", "ce", "est-ce"],
+		"question" : ["quoi", "quand", "qui", "comment", "pourquoi", "quel", "lequel", "que", "qu'est", "ce"],
 		"verb" : ["peut", "peux"]
 	}
 }

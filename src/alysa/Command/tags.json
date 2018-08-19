@@ -11,7 +11,7 @@
 		"OS" : ["Windows", "Mac OS"],
 		"prefix" : ["say"],
 		"languages" : "*"
-	}
+	},
 	"playMusic" :
 	{
 		"OS" : "*",

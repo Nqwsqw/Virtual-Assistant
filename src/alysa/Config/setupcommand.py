@@ -5,22 +5,30 @@ import json
 
 def setup():
 	path_list = []
-	json_list = []
+	json_list = [] # element of json_list: {"saySomething" : {"OS" : ["Windows"], "languages" : ["en"], "prefix" : ["say"]}}
 	data = {} # data sample: {"say" : {"OS" : ["Windows"], "function" : saySomething, "languages" : ["en"]}
+
+	# list_command = [(path_json, function, function_name)]
 	for x in list_command:
 		path = x[0]
+		function_name = x[2]
 		try:
 			index = path_list.index(path)
-			function_name = x[2]
-			f = json_list[index][function_name]
-			my_dict = f
-			my_dict.pop(my_dict["prefix"])
-			my_dict["function"] = x[1]
-			for y in f["prefix"]:
-				data[y] = my_dict
 		except:
-			file = open(path, "r")
-			data = json.load(file)
+			a = open(path, "r")
 			path_list.append(path)
-			json_list.append(data)
+
+			my_json = json.load(a)
+			json_list.append(my_json)
+
+			index = path_list.index(path)
+
+		# now transform the data
+		f = json_list[index][function_name] # f = {"OS" : ["Windows"], "languages" : ["en"], "prefix" : ["say"]}
+		my_prefix = f["prefix"]
+		f.pop("prefix")
+		for p in my_prefix:
+			f["function"] = x[1] # the function not the name of function
+			data[p] = f
+		
 	return data
