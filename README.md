@@ -32,3 +32,9 @@ list_command = [
 ```
 ./run.sh
 ```
+
+or
+
+```
+python3 src/alysa/App/main.py
+```
