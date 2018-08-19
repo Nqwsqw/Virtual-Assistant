@@ -14,7 +14,7 @@ def playMusic(request):
 	string = request["auto"]
 	string = string.replace("play ", "")
 	extension = "mp3"
-	path = "Virutal-Assistant/res/Musics/" + string + "." + extension
+	path = "res/Musics/" + string + "." + extension
 	music = open(path, "r")
 	if(os.path.isfile(path) == True):
 		playsound(path)
