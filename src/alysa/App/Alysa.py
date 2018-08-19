@@ -1,9 +1,9 @@
 import sys
 sys.path.append("src/")
-from alysa.Config import setupcommand
-
+from alysa.Config import setupcommand, setuplanguages
+lang = "en"
 class Alysa:
-	def __init__(self, data = setupcommand.setup(), useless_list = ["ok"]):
+	def __init__(self, data = setupcommand.setup(), useless_list = setuplanguages.setup(lang)):
 		self.data = data
 		self.useless_list = useless_list
 
