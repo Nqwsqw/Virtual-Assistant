@@ -5,6 +5,11 @@
  - playsound python3
  - pyobjc
 
+## Install
+```
+./install.sh
+```
+
 ## Add your own command
 Go to src/alysa/Command/defaultcommand.py
 Add your own function:
