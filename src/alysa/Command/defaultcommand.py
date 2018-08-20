@@ -1,7 +1,9 @@
 import os
 import platform
+import webbrowser
 from playsound import playsound
 from subprocess import call
+from bs4 import BeautifulSoup
 
 def printHello(request):
 	print("Hello World")
@@ -35,6 +37,17 @@ def openApp(request):
 		os.system(string)
 	else:
 		print("Unknow operating system")
+		
+def searchOnWeb(request):
+	string = request["raw"]
+	string = string.replace("search on web ", "")
+	searchLink = "https://google.com/#q="
+	webbrowser.open(searchlink + string)
+	for x in range(0, 4, 1):
+		x = str(x)
+		fiveLinks = soup.find(id="link" + x).get("href")
+	print(fiveLinks)
+	
 		
 		
 		

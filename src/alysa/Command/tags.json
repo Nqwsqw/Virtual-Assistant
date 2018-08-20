@@ -18,4 +18,17 @@
 		"prefix" : ["play"],
 		"languages" : "*"
 	}
+	"openApp" :
+	{
+		"OS" : "*",
+		"prefix" : ["open"],
+		"languages" : "*"
+	}
+	"searchOnWeb" :
+	{
+		"OS" : "*",
+		"prefix" : ["search on", "web"],
+		"languages" : "*"
+	}
+	
 }
