@@ -1,5 +1,7 @@
 import os
+import platform
 from playsound import playsound
+from subprocess import call
 
 def printHello(request):
 	print("Hello World")
@@ -20,3 +22,19 @@ def playMusic(request):
 		playsound(path)
 	else:
 		print("No Such Music")
+
+def openApp(request):
+	string = request["auto"]
+	string = string.replace("open ", "")
+	extension = ["app", "exe"]
+	if(platform.system == "Windows"):
+		call([string + extension[1]])
+	if(platform.system == "Darwin"):
+		call([string +extension[0]])
+	if(platform.system == "Linux"):
+		os.system(string)
+	else:
+		print("Unknow operating system")
+		
+		
+		
