@@ -28,9 +28,9 @@ def openApp(request):
 	string = string.replace("open ", "")
 	extension = ["app", "exe"]
 	if(platform.system == "Windows"):
-		call([string + extension[1]])
+		print("lol")
 	if(platform.system == "Darwin"):
-		call([string +extension[0]])
+		os.system("open -a" + string)
 	if(platform.system == "Linux"):
 		os.system(string)
 	else:
