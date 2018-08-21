@@ -29,6 +29,6 @@
 		"OS" : "*",
 		"prefix" : ["search on", "web"],
 		"languages" : "*"
-	},
+	}
 	
 }
