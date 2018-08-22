@@ -8,4 +8,5 @@ list_command = [
 	("src/alysa/Command/tags.json", defaultcommand.playMusic, "playMusic"),
 	("src/alysa/Command/tags.json", defaultcommand.openApp, "openApp"),
 	("src/alysa/Command/tags.json", defaultcommand.searchOnWeb, "searchOnWeb"),
+	("src/alysa/Command/tags.json", defaultcommand.searchOnWiki, "searchOnWiki"),
 ]

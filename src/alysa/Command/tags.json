@@ -29,6 +29,13 @@
 		"OS" : "*",
 		"prefix" : ["search on", "web"],
 		"languages" : "*"
+	},
+	"searchOnWiki" :
+	{
+		"OS" : "*",
+		"prefix" : ["search on", "wiki"],
+		"languages" : "*"
 	}
+	
 	
 }
