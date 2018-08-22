@@ -2,6 +2,7 @@ import os
 import glob
 import platform
 import webbrowser
+import wikipedia
 from playsound import playsound
 from subprocess import call
 from bs4 import BeautifulSoup
@@ -50,6 +51,11 @@ def searchOnWeb(request):
 	string = string.replace("search on web ", "")
 	for url in search(string, tld='com', lang='fr', num=5, start=0, stop=5, pause=0):
 		print(url)
+		
+def searchOnWiki(request):
+        string = request["raw"]
+        string = string.replace("search on wiki ", "")
+        print(wikipedia.summary(string, sentences=5))
 	
 		
 		
