@@ -34,11 +34,11 @@ class Setup:
 	
 			# now transform the data
 			f = json_list[index][function_name] # f = {"OS" : ["Windows"], "languages" : ["en"], "prefix" : ["say"]}
-			my_prefix = f["prefix"]
-			f.pop("prefix")
+			my_prefix = f["prefix"] # my_prefix = ["say", ...]
+			f.pop("prefix") # remove field prefix from f
 			for p in my_prefix:
-				f["function"] = x[1] # the function not the name of function
-				data[p] = f
+				f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething]}
+				data[p] = f # add f to the field p in data
 			
 		return data
 	
