@@ -32,13 +32,20 @@ def playMusic(request):
 def openApp(request):
 	string = request["auto"]
 	string = string.replace("open ", "")
-	extension = "exe"
+	extension = [".ink", ".exe"]
 	if(platform.system() == "Windows"):
-		app = string + "." + extension
-		for root, dirs, files in os.walk("C:\\"):
-			if app in files:
-				path = os.path.join(root, app)
-			os.startfile(path)
+		exeFile = string + extension[1]
+		inkFile = string + extension[0]
+		for x in ("C:\ProgramData\Microsoft\Windows\Start Menu\Programs", "C:\Program Files (x86)", "C:\Program Files", os.getenv('LOCALAPPDATA'), os.getenv('APPDATA')):
+			for root, dirs, files in os.walk(x):
+				if inkFile in files:
+					path = os.path.join(root, inkFile)
+					os.startfile(path)
+					return
+				if exeFile in files:
+					path = os.path.join(root, exeFile)
+					os.startfile(path)
+					return							
 	elif platform.system() == "Darwin":
 		os.system("open -a" + string)
 	elif platform.system() == "Linux":
