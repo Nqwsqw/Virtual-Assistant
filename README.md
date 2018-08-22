@@ -6,8 +6,13 @@
  - pyobjc
 
 ## Install
+On Mac:
 ```
-./install.sh
+pip3 install -r requirements.txt
+```
+On Windows or Linux:
+```
+pip install -r requirements.txt
 ```
 
 ## Add your own command
