@@ -37,10 +37,16 @@ class Setup:
 			my_prefix = f["prefix"] # my_prefix = ["say", ...]
 			f.pop("prefix") # remove field prefix from f
 			for p in my_prefix:
-				f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}
-				data[p] = f # add f to the field p in data
-				# ex: data = {"say" : {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}, "play" : {"OS" : ....}}
-
+				if((platform.system() == "Windows") and ("Windows" in f["OS"] or "*" in f["OS"])):
+					f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}
+					data[p] = f # add f to the field p in data
+				if((platform.system() == "Linux") and ("Linux" in f["OS"] or "*" in f["OS"])):
+					f["function"] = x[1]
+					data[p] = f
+				if((platform.system() == "Darwin") and ("Mac OS" in f["OS"] or "*" in f["OS"])):
+					f["function"] = x[1]
+					data[p] = f
+					# ex: data = {"say" : {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}, "play" : {"OS" : ....}}
 		return data
 	
 	#setup useless words of a languages
