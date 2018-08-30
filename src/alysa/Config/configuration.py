@@ -1,5 +1,6 @@
 #/usr/bin/python3
 import sys
+import platform
 sys.path.append("src/")
 from .commandlist import *
 import json
@@ -37,13 +38,16 @@ class Setup:
 			my_prefix = f["prefix"] # my_prefix = ["say", ...]
 			f.pop("prefix") # remove field prefix from f
 			for p in my_prefix:
-				if((platform.system() == "Windows") and ("Windows" in f["OS"] or "*" in f["OS"])):
+				if((platform.system() == "Windows") and ("Windows" in f["OS"])):
 					f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}
 					data[p] = f # add f to the field p in data
-				if((platform.system() == "Linux") and ("Linux" in f["OS"] or "*" in f["OS"])):
+				elif((platform.system() == "Linux") and ("Linux" in f["OS"])):
 					f["function"] = x[1]
 					data[p] = f
-				if((platform.system() == "Darwin") and ("Mac OS" in f["OS"] or "*" in f["OS"])):
+				elif((platform.system() == "Darwin") and ("Mac OS" in f["OS"])):
+					f["function"] = x[1]
+					data[p] = f
+				elif("*" in f["OS"]):
 					f["function"] = x[1]
 					data[p] = f
 					# ex: data = {"say" : {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}, "play" : {"OS" : ....}}

@@ -2,5 +2,5 @@ playsound
 pyobjc
 wikipedia
 playsound
-googlesearch
+google
 
