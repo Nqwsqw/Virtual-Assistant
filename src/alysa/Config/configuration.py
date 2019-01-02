@@ -4,6 +4,8 @@ import platform
 sys.path.append("src/")
 from .commandlist import *
 import json
+import os
+import json
 
 class Setup:
 	def __init__(self):
@@ -38,18 +40,23 @@ class Setup:
 			my_prefix = f["prefix"] # my_prefix = ["say", ...]
 			f.pop("prefix") # remove field prefix from f
 			for p in my_prefix:
+				my_dict = json.loads(open("setting.json", "r"))
 				if((platform.system() == "Windows") and ("Windows" in f["OS"])):
-					f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}
-					data[p] = f # add f to the field p in data
+					if("en" in f["languages"] or "*" in f["languages"]):
+						f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}
+						data[p] = f # add f to the field p in data
 				elif((platform.system() == "Linux") and ("Linux" in f["OS"])):
-					f["function"] = x[1]
-					data[p] = f
+					if("en" in f["languages"] or "*" in f["languages"]):
+						f["function"] = x[1]
+						data[p] = f
 				elif((platform.system() == "Darwin") and ("Mac OS" in f["OS"])):
-					f["function"] = x[1]
-					data[p] = f
+					if("en" in f["languages"] or "*" in f["languages"]):
+						f["function"] = x[1]
+						data[p] = f
 				elif("*" in f["OS"]):
-					f["function"] = x[1]
-					data[p] = f
+					if("en" in f["languages"] or "*" in f["languages"]):
+						f["function"] = x[1]
+						data[p] = f
 					# ex: data = {"say" : {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}, "play" : {"OS" : ....}}
 		return data
 	
@@ -65,3 +72,5 @@ class Setup:
 		for word in languages:
 			useless_list.extend(languages[word]) # extend useless_list with another list
 		return useless_list
+		
+
