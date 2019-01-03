@@ -40,7 +40,7 @@ class Setup:
 			my_prefix = f["prefix"] # my_prefix = ["say", ...]
 			f.pop("prefix") # remove field prefix from f
 			for p in my_prefix:
-				my_dict = json.loads(open("src/alysa/Config/setting.json", "r")) 
+				my_dict = json.load(open("src/alysa/Config/setting.json", "r")) 
 				if((platform.system() == "Windows") and ("Windows" in f["OS"])):
 					if(my_dict["lang"] == f["languages"] or "*" in f["languages"]):
 						f["function"] = x[1] # the function pointer, f = {"OS" : ["Windows"], "languages" : ["en"], "function" : Command.defaultcommand.saySomething}
